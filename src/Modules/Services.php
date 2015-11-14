@@ -13,6 +13,5 @@ $app->get('/services', function() use ($entityManager){
 });
 $app->get('/services/:id', function($id) use ($entityManager){
     $services = $entityManager->find("Entity\\Service", $id);
-    if($services !== null)
-        echo json_encode($services);
+    echo json_encode(array("ReturnCode" => 1,"Data" => $services));
 });

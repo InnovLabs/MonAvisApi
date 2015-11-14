@@ -7,6 +7,9 @@
  */
 use Entity\Categorie;
 
+include("Ressource.class.php");//fichier g�rant la logique POST
+$ressource = new Ressource();//cr�ation d'un Resource g�rer la methode POST
+
 $app->get('/categories', function() use ($entityManager){
     $categories = $entityManager->getRepository("Entity\\Categorie")->findBy(array(), array('libelle' => 'ASC'));
     echo json_encode(array("ReturnCode" => 1,"Data" => $categories));
@@ -14,7 +17,11 @@ $app->get('/categories', function() use ($entityManager){
 
 $app->get('/categories/:id', function($id) use ($entityManager){
     $categories = $entityManager->find("Entity\\Categorie", $id);
-
-    if($categories !== null)
-        echo json_encode($categories);
+    echo json_encode(array("ReturnCode" => 1,"Data" => $categories));
+});
+$app->post('/categories/add/', function() use ($ressource,$entityManager){
+    $categorieToAdd =  $ressource->post('Entity\Categorie');
+    $entityManager->persist($categorieToAdd);
+    $entityManager->flush();
+    echo 'succès !';
 });
