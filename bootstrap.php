@@ -14,21 +14,24 @@ $paths = array(__DIR__."/src/Entity");
 $isDevMode = true;
 
 // the connection configuration
-//$dbParams = array(
-//    'host'     => 'bd01.cloud4africa.net',
-//    'driver'   => 'pdo_mysql',
-//    'user'     => 'c580_willy',
-//    'password' => '100%Jesus!',
-//    'dbname'   => 'c580_test',
-//);
-
 $dbParams = array(
-    'host'     => 'localhost',
+    'host'     => 'bd01.cloud4africa.net',
     'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'monavis_db',
+    'user'     => 'c580_willy',
+    'password' => '100%Jesus!',
+    'dbname'   => 'c580_monavis_db',
+    'driverOptions' => array(
+        1002 => 'SET NAMES utf8'
+    )
 );
+
+//$dbParams = array(
+//    'host'     => 'localhost',
+//    'driver'   => 'pdo_mysql',
+//    'user'     => 'root',
+//    'password' => '',
+//    'dbname'   => 'monavis_db',
+//);
 
 $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
 $entityManager = EntityManager::create($dbParams, $config);
