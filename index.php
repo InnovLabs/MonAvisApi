@@ -18,7 +18,5 @@ $app->contentType('application/json;charset=utf-8');
 include("src/Modules/Categories.php");//Categories
 include("src/Modules/Etats.php");//Etats
 include("src/Modules/Users.php");//Users
-include("src/Modules/Entreprises.php");//Entreprises
-include("src/Modules/Services.php");//Services
 
 $app->run();
