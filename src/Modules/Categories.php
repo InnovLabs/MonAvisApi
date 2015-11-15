@@ -7,9 +7,10 @@
  */
 use Entity\Categorie;
 
-$app->get('/lescategories', function() use ($entityManager){
+$app->get('/categories', function() use ($entityManager){
     $categories = $entityManager->getRepository("Entity\\Categorie")->findAll();
-    echo json_encode($categories);
+    echo json_encode(array("ReturnCode" => 1,"Data" => $categories));
+    //echo json_encode(print_r($categories));
 });
 
 $app->get('/categories/:id', function($id) use ($entityManager){

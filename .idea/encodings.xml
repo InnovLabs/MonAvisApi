@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/databuilder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Entity/Avis.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Modules/Categories.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Modules/Etats.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Modules/Produits.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Modules/Users.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Utils/DataConverter.php" charset="UTF-8" />
+  </component>
+</project>
