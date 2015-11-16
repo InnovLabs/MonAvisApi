@@ -8,9 +8,8 @@
 use Entity\Categorie;
 
 $app->get('/categories', function() use ($entityManager){
-    $categories = $entityManager->getRepository("Entity\\Categorie")->findAll();
+    $categories = $entityManager->getRepository("Entity\\Categorie")->findBy(array(), array('libelle' => 'ASC'));
     echo json_encode(array("ReturnCode" => 1,"Data" => $categories));
-    //echo json_encode(print_r($categories));
 });
 
 $app->get('/categories/:id', function($id) use ($entityManager){
