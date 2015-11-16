@@ -11,7 +11,9 @@
     <file url="file://$PROJECT_DIR$/src/Entity/Service.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Entity/TypeEntreprise.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Entity/User.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Modules/Avis.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Modules/Categories.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Modules/Commentaire.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Modules/Entreprises.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Modules/Etats.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Modules/Ressource.class.php" charset="UTF-8" />

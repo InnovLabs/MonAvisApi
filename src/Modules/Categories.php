@@ -7,8 +7,8 @@
  */
 use Entity\Categorie;
 
-include("Ressource.class.php");//fichier g�rant la logique POST
-$ressource = new Ressource();//cr�ation d'un Resource g�rer la methode POST
+include("Ressource.class.php");//fichier gérant la logique POST
+$ressource = new Ressource();//création d'un Resource gérer la methode POST
 
 $app->get('/categories', function() use ($entityManager){
     $categories = $entityManager->getRepository("Entity\\Categorie")->findBy(array(), array('libelle' => 'ASC'));

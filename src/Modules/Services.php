@@ -15,3 +15,7 @@ $app->get('/services/:id', function($id) use ($entityManager){
     $services = $entityManager->find("Entity\\Service", $id);
     echo json_encode(array("ReturnCode" => 1,"Data" => $services));
 });
+$app->get('/services/ByEntreprise/:id', function($id) use ($entityManager){
+    $services = $entityManager->getRepository("Entity\\Service")->findBy(array('entreprise' => $id));
+    echo json_encode(array("ReturnCode" => 1,"Data" => $services));
+});

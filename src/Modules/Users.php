@@ -7,14 +7,12 @@
  */
 use Entity\User;
 
-$app->get('/users/:id', function($id) use ($entityManager){
-    $users = $entityManager->find("Entity\\User", $id);
-
-    if($users !== null)
-        echo json_encode($users);
-});
-
 $app->get('/users', function() use ($entityManager){
     $users = $entityManager->getRepository("Entity\\User")->findAll();
-    echo json_encode($users);
+    echo json_encode(array("ReturnCode" => 1,"Data" => $users));
 });
+$app->get('/users/:id', function($id) use ($entityManager){
+    $users = $entityManager->find("Entity\\User", $id);
+    echo json_encode(array("ReturnCode" => 1,"Data" => $users));
+});
+
