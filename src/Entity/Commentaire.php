@@ -133,7 +133,7 @@ class Commentaire implements JsonSerializable
     public static function loadMetadata(ClassMetadata $metadata)
     {
         $builder = new ClassMetadataBuilder($metadata);
-        $builder->createField('id', 'integer')->isPrimaryKey()->generatedValue()->build();
+        $builder->createField('id', 'integer')->makePrimaryKey()->generatedValue()->build();
         $builder->addField('dateCreation', 'datetime');
         $builder->addField('contenu', 'string');
         $builder->addManyToOne('avis', 'Entity\\Avis');

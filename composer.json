@@ -1,7 +1,7 @@
 {
   "require": {
     "slim/slim": "2.*",
-    "doctrine/orm": "2.4.*"
+    "doctrine/orm": "2.*"
   },
   "autoload": {
     "psr-0": {"": "src/"}

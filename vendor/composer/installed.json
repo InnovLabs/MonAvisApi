@@ -317,81 +317,6 @@
         ]
     },
     {
-        "name": "doctrine/orm",
-        "version": "v2.4.8",
-        "version_normalized": "2.4.8.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/doctrine2.git",
-            "reference": "5aedac1e5c5caaeac14798822c70325dc242d467"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/5aedac1e5c5caaeac14798822c70325dc242d467",
-            "reference": "5aedac1e5c5caaeac14798822c70325dc242d467",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/collections": "~1.1",
-            "doctrine/dbal": "~2.4",
-            "ext-pdo": "*",
-            "php": ">=5.3.2",
-            "symfony/console": "~2.0"
-        },
-        "require-dev": {
-            "satooshi/php-coveralls": "dev-master",
-            "symfony/yaml": "~2.1"
-        },
-        "suggest": {
-            "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
-        },
-        "time": "2015-08-31 13:19:01",
-        "bin": [
-            "bin/doctrine",
-            "bin/doctrine.php"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.4.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\ORM\\": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com"
-            },
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com"
-            }
-        ],
-        "description": "Object-Relational-Mapper for PHP",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "database",
-            "orm"
-        ]
-    },
-    {
         "name": "doctrine/inflector",
         "version": "v1.1.0",
         "version_normalized": "1.1.0.0",
@@ -662,5 +587,140 @@
         ],
         "description": "Symfony Console Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "doctrine/instantiator",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/instantiator.git",
+            "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
+            "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3,<8.0-DEV"
+        },
+        "require-dev": {
+            "athletic/athletic": "~0.1.8",
+            "ext-pdo": "*",
+            "ext-phar": "*",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "time": "2015-06-14 21:17:01",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com",
+                "homepage": "http://ocramius.github.com/"
+            }
+        ],
+        "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
+        "homepage": "https://github.com/doctrine/instantiator",
+        "keywords": [
+            "constructor",
+            "instantiate"
+        ]
+    },
+    {
+        "name": "doctrine/orm",
+        "version": "v2.5.1",
+        "version_normalized": "2.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/doctrine2.git",
+            "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/e6a83bedbe67579cb0bfb688e982e617943a2945",
+            "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/cache": "~1.4",
+            "doctrine/collections": "~1.2",
+            "doctrine/common": ">=2.5-dev,<2.6-dev",
+            "doctrine/dbal": ">=2.5-dev,<2.6-dev",
+            "doctrine/instantiator": "~1.0.1",
+            "ext-pdo": "*",
+            "php": ">=5.4",
+            "symfony/console": "~2.5"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "dev-master",
+            "symfony/yaml": "~2.1"
+        },
+        "suggest": {
+            "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
+        },
+        "time": "2015-08-31 12:59:39",
+        "bin": [
+            "bin/doctrine",
+            "bin/doctrine.php"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\ORM\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            }
+        ],
+        "description": "Object-Relational-Mapper for PHP",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "orm"
+        ]
     }
 ]

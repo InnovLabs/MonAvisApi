@@ -184,7 +184,7 @@ class Entreprise implements JsonSerializable
     public static function loadMetadata(ClassMetadata $metadata)
     {
         $builder = new ClassMetadataBuilder($metadata);
-        $builder->createField('id', 'integer')->isPrimaryKey()->generatedValue()->build();
+        $builder->createField('id', 'integer')->makePrimaryKey()->generatedValue()->build();
         $builder->addField('libelle', 'string');
         $builder->addField('description', 'string');
         $builder->addField('longitude', 'integer');
