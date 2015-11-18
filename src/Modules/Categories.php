@@ -16,10 +16,3 @@ $app->get('/categories/:id', function($id) use ($entityManager){
     $categories = $entityManager->find("Entity\\Categorie", $id);
     echo json_encode(array("ReturnCode" => 1,"Data" => $categories));
 });
-
-//$app->post('/categories/add/', function() use ($ressource,$entityManager){
-//    $categorieToAdd =  $ressource->post('Entity\Categorie');
-//    $entityManager->persist($categorieToAdd);
-//    $entityManager->flush();
-//    echo 'succès !';
-//});

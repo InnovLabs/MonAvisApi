@@ -5,8 +5,10 @@
  * Date: 09/11/2015
  * Time: 17:48
  */
-use Entity\Etat;
-
+$app->get('/etats', function() use ($entityManager){
+    $etats = $entityManager->getRepository("Entity\\Etat")->findAll();
+    echo json_encode($etats);
+});
 $app->get('/etats/:id', function($id) use ($entityManager){
     $etats = $entityManager->find("Entity\\User", $id);
 
@@ -14,7 +16,3 @@ $app->get('/etats/:id', function($id) use ($entityManager){
         echo json_encode($etats);
 });
 
-$app->get('/etats', function() use ($entityManager){
-    $etats = $entityManager->getRepository("Entity\\Etat")->findAll();
-    echo json_encode($etats);
-});
