@@ -22,5 +22,6 @@ include("src/Modules/Entreprises.php");//Entreprises
 include("src/Modules/Services.php");//Services
 include("src/Modules/Avis.php");//Avis
 include("src/Modules/Commentaire.php");//Commentaires
+include("src/Modules/ReputationUser.php");//ReputationUser
 
 $app->run();

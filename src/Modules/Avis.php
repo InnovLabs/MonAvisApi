@@ -17,6 +17,14 @@ $app->get('/avis/ByUserAndService/:id/:id2', function($idUser,$idService) use ($
     $avis = $entityManager->getRepository("Entity\\Avis")->findBy(array('user'=> $idUser,'service'=>$idService));
     echo json_encode(array("ReturnCode" => 1,"Data" => $avis));
 });
+$app->get('/avis/ByService/:id', function($idService) use ($entityManager){
+    $avis = $entityManager->getRepository("Entity\\Avis")->findBy(array('service'=>$idService));
+    echo json_encode(array("ReturnCode" => 1,"Data" => $avis));
+});
+$app->get('/avis/ByUser/:id', function($idUser) use ($entityManager){
+    $avis = $entityManager->getRepository("Entity\\Avis")->findBy(array('user'=>$idUser));
+    echo json_encode(array("ReturnCode" => 1,"Data" => $avis));
+});
 //$app->post('/categories/add/', function() use ($ressource,$entityManager){
 //    $categorieToAdd =  $ressource->post('Entity\Categorie');
 //    $entityManager->persist($categorieToAdd);
