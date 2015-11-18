@@ -21,17 +21,19 @@ class Entreprise implements JsonSerializable
 
     protected $logo;
 
+    protected $photo;
+
     protected $description;
 
-    protected $longitude;
-
-    protected $latitude;
+    protected $resume;
 
     protected $dateAdd;
 
     protected $typeEntreprise;
 
     protected $categorie;
+
+    protected $ranking;
 
     public function __construct()
     {
@@ -88,6 +90,23 @@ class Entreprise implements JsonSerializable
     /**
      * @return mixed
      */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+
+    /**
+     * @return mixed
+     */
     public function getDescription()
     {
         return $this->description;
@@ -99,38 +118,6 @@ class Entreprise implements JsonSerializable
     public function setDescription($description)
     {
         $this->description = $description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLongitude()
-    {
-        return $this->longitude;
-    }
-
-    /**
-     * @param mixed $longitude
-     */
-    public function setLongitude($longitude)
-    {
-        $this->longitude = $longitude;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLatitude()
-    {
-        return $this->latitude;
-    }
-
-    /**
-     * @param mixed $latitude
-     */
-    public function setLatitude($latitude)
-    {
-        $this->latitude = $latitude;
     }
 
     /**
@@ -181,14 +168,47 @@ class Entreprise implements JsonSerializable
         $this->categorie = $categorie;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getResume()
+    {
+        return $this->resume;
+    }
+
+    /**
+     * @param mixed $resume
+     */
+    public function setResume($resume)
+    {
+        $this->resume = $resume;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRanking()
+    {
+        return $this->ranking;
+    }
+
+    /**
+     * @param mixed $ranking
+     */
+    public function setRanking($ranking)
+    {
+        $this->ranking = $ranking;
+    }
+
     public static function loadMetadata(ClassMetadata $metadata)
     {
         $builder = new ClassMetadataBuilder($metadata);
         $builder->createField('id', 'integer')->makePrimaryKey()->generatedValue()->build();
         $builder->addField('libelle', 'string');
         $builder->addField('description', 'string');
-        $builder->addField('longitude', 'integer');
-        $builder->addField('latitude', 'integer');
+        $builder->addField('logo', 'string');
+        $builder->addField('photo', 'string');
+        $builder->addField('resume', 'string');
         $builder->addField('dateAdd', 'datetime');
         $builder->addManyToOne('typeEntreprise', "Entity\\TypeEntreprise");
         $builder->addManyToOne('categorie', "Entity\\Categorie");

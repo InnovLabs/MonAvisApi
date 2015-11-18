@@ -15,7 +15,30 @@ $app->get('/entreprises/:id', function($id) use ($entityManager){
     echo json_encode(array("ReturnCode" => 1,"Data" => $entreprises));
 });
 $app->get('/entreprises/categorie/:id', function($idCategorie) use ($entityManager){
-    $entreprises = $entityManager->getRepository("Entity\\Entreprise")->findBy(array('categorie' => $idCategorie));
+    $entreprises = $entityManager->getRepository("Entity\\Entreprise")
+                                 ->findBy(array('categorie' => $idCategorie));
+
+    if(null !== $entreprises){
+        foreach($entreprises as $e){
+            $compteAvis = 1;
+            $somRanking = 0;
+            $services = $entityManager->getRepository("Entity\\Service")->findBy(array('entreprise' => $e->getId()));
+            if(null !== $services){
+                foreach($services as $unService){
+                    $avis = $entityManager->getRepository("Entity\\Avis")->findBy(array('service'=> $unService->getId()));
+                    if(null !== $avis and count($avis)){
+                        $compteAvis = count($avis);
+                        foreach($avis as $unAvis){
+                            $somRanking += $unAvis->getRanking();
+                        }
+                    }
+                }
+            }
+
+            $e->setRanking(round(($somRanking/$compteAvis),2));
+        }
+    }
+
     echo json_encode(array("ReturnCode" => 1,"Data" => $entreprises));
 });
 $app->get('/entreprises/notes/:id', function($idEntreprise) use ($entityManager){
