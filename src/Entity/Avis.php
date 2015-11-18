@@ -112,7 +112,7 @@ class Avis implements JsonSerializable
     public static function loadMetadata(ClassMetadata $metadata)
     {
         $builder = new ClassMetadataBuilder($metadata);
-        //$builder->createField('id', 'integer')->isPrimaryKey()->generatedValue()->build();
+        $builder->createField('id', 'integer')->makePrimaryKey()->generatedValue()->build();
         $builder->addManyToOne('service', 'Entity\\Service');
         $builder->addManyToOne('user', 'Entity\\User');
         $builder->addField('justification', 'string');
