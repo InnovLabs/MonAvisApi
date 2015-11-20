@@ -14,9 +14,3 @@ $app->get('/commentaires/:id', function($id) use ($entityManager){
     $commentaires = $entityManager->find("Entity\\Commentaire", $id);
     echo json_encode(array("ReturnCode" => 1,"Data" => $commentaires));
 });
-//$app->post('/categories/add/', function() use ($ressource,$entityManager){
-//    $categorieToAdd =  $ressource->post('Entity\Categorie');
-//    $entityManager->persist($categorieToAdd);
-//    $entityManager->flush();
-//    echo 'succès !';
-//});

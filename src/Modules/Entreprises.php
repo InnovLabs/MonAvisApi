@@ -15,6 +15,6 @@ $app->get('/entreprises/:id', function($id) use ($entityManager){
     $entreprises = $entityManager->find("Entity\\Entreprise", $id);
     echo json_encode(array("ReturnCode" => 1,"Data" => $entreprises));
 });
-$app->post('/entreprises/add/', function() use ($ressource,$entityManager){
-    echo "good";
+$app->post('/entreprises/add/', function() use ($entityManager){
+
 });
