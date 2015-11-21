@@ -20,9 +20,7 @@ $dbParams = array(
     'user'     => 'c580_willy',
     'password' => '100%Jesus!',
     'dbname'   => 'c580_monavis_db',
-    'driverOptions' => array(
-        1002 => 'SET NAMES utf8'
-    )
+    'charset'  => 'urf8'
 );
 
 //$dbParams = array(
