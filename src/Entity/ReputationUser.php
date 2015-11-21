@@ -25,6 +25,7 @@ class ReputationUser implements  JsonSerializable
 
     protected $unLike;
 
+
     /**
      * @return mixed
      */
@@ -104,6 +105,9 @@ class ReputationUser implements  JsonSerializable
     {
         $this->unLike = $unLike;
     }
+
+
+
 
 
     public static function loadMetadata(ClassMetadata $metadata)
