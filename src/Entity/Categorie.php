@@ -19,6 +19,10 @@ class Categorie implements JsonSerializable
 
     protected $libelle;
 
+    protected $image;
+
+    protected $color;
+
     /**
      * @return mixed
      */
@@ -51,11 +55,45 @@ class Categorie implements JsonSerializable
         $this->libelle = $libelle;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
     public static function loadMetadata(ClassMetadata $metadata)
     {
         $builder = new ClassMetadataBuilder($metadata);
         $builder->createField('id', 'integer')->makePrimaryKey()->generatedValue()->build();
         $builder->addField('libelle', 'string');
+        $builder->addField('image', 'string');
+        $builder->addField('color', 'string');
     }
 
     /**
