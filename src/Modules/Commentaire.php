@@ -22,3 +22,12 @@ $app->get('/commentaires/user/:id', function($idUser) use ($entityManager){
     $commentaires = $entityManager->getRepository("Entity\\Commentaire")->findBy(array('user' => $idUser));
     echo json_encode(array("ReturnCode" => 1,"Data" => $commentaires));
 });
+/*****************POST****************/
+$app->post('/commentaire', function() use ($app,$entityManager){
+    $commentaire = new Commentaire();
+    hydrate($commentaire,$app);
+    $entityManager->persist($commentaire);
+    $entityManager->flush();
+
+    echo json_encode(array("ReturnCode" => 1,"Data" => "commentaire ajouté !"));//compter les résultats
+});

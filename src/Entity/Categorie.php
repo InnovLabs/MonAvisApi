@@ -19,6 +19,10 @@ class Categorie implements JsonSerializable
 
     protected $libelle;
 
+    protected  $image;
+
+    protected  $color;
+
     /**
      * @return mixed
      */

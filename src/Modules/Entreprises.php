@@ -58,4 +58,13 @@ $app->get('/entreprises/notes/:id', function($idEntreprise) use ($entityManager)
     }
     echo json_encode(array("ReturnCode" => 1,"Data" => round(($avgRanking/$compteAvis),2)));
 });
+/*****************POST****************/
+$app->post('/entreprise', function() use ($app,$entityManager){
+    $entreprise = new Entreprise();
+    hydrate($entreprise,$app);
+    $entityManager->persist($entreprise);
+    $entityManager->flush();
+
+    echo json_encode(array("ReturnCode" => 1,"Data" => "commentaire ajouté !"));//compter les résultats
+});
 

@@ -23,5 +23,6 @@ include("src/Modules/Services.php");//Services
 include("src/Modules/Avis.php");//Avis
 include("src/Modules/Commentaire.php");//Commentaires
 include("src/Modules/ReputationUser.php");//ReputationUser
+include("src/Modules/Fonctions.php");//fonction d'hydratation pour les POST ET PUT
 
 $app->run();
