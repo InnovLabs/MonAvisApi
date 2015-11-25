@@ -1,6 +1,6 @@
 # MonAvisApi
 Un webservice developpé avec Slim et doctrine(en cours de developpement)
-Welcome to the MonAvisApi wiki!
+Documentation
 
 ***
 
